@@ -12,5 +12,8 @@
     "Components"
   ],
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "polymer": "~0.0.20131010"
+  }
 }
