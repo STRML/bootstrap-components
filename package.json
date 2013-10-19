@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-components",
+  "version": "0.0.1",
+  "description": "Web Components for Bootstrap",
+  "main": "index.js",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/STRML/bootstrap-components.git"
+  },
+  "author": "Samuel Reed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/STRML/bootstrap-components/issues"
+  }
+}
