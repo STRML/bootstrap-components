@@ -1,16 +1,37 @@
-<polymer-element name="bootstrap-navbar" attributes="">
+<polymer-element name="bootstrap-navbar" attributes="collapse">
   <template>
     <style>
       @host { :scope {display: block;} }
     </style>
-    <content select="h3"></content>
-    <h2>
-      This is the header.
-    </h2>
-    <content select=".foobar"></content>
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+
+      <template if="{{collapse}}">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <content select=".nav, .navbar-form"></content>
+        </div>
+      </template>
+
+      <template if="{{!collapse}}">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <content select=".nav, .navbar-form"></content>
+      </template>
+
+    </nav>
   </template>
   <script>
-    Polymer('header-element', {
+    Polymer('bootstrap-navbar', {
       //applyAuthorStyles: true,
       //resetStyleInheritance: true,
       created: function() { 

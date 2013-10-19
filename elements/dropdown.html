@@ -1,0 +1,61 @@
+<polymer-element name="bootstrap-dropdown" attributes="type">
+  <template>
+    <style>
+      @host { 
+        :scope {
+          display: none;
+          position: relative;
+        } 
+        .open {
+          display: block;
+        }
+      }
+    </style>
+    <ul class="dropdown-menu" role="menu">
+      <content select="li"></content>
+    </ul>
+  </template>
+  <script>
+    Polymer('bootstrap-dropdown', {
+      //applyAuthorStyles: true,
+      //resetStyleInheritance: true,
+      backdrop: '.dropdown-backdrop',
+      created: function() { 
+      },
+      enteredView: function() {
+        var me = this;
+        this.parentElement.addEventListener('click', function(e){
+          me.toggleDropdown(e);
+        });
+        document.body.addEventListener('click', function(e){
+          me.clearMenus(e);
+        });
+      },
+      leftView: function() { 
+        this.parentElement.removeEventListener('click', this.toggleDropdown);
+        document.body.removeEventListener('click', this.clearMenus);
+      },
+      attributeChanged: function(attrName, oldVal, newVal) { },
+      toggleDropdown: function(e) {
+        if (this.classList.contains('disabled')) return;
+        this.clearMenus(e);
+        this.classList.toggle('open');
+        var eventName = "dropdown:" + (this.classList.contains('open') ? 'open' : 'closed');
+        this.fire(eventName);
+        e.data = {ignoreElement: this};
+      },
+      clearMenus: function(e){
+        var forEach = Array.prototype.forEach;
+        var _this = this;
+        forEach.call(document.querySelectorAll(this.backdrop), function(backdropEl) {
+          backdropEl.parentElement.removeChild(backdropEl);
+        });
+        forEach.call(document.getElementsByTagName('bootstrap-dropdown'), function(dropdownEl){
+          if (dropdownEl === _this) return;
+          if (e.data && dropdownEl === e.data.ignoreElement) return;
+          dropdownEl.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</polymer-element>

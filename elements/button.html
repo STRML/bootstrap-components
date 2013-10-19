@@ -1,0 +1,20 @@
+<polymer-element name="bootstrap-button" attributes="type">
+  <template>
+    <style>
+      @host { :scope {display: block;} }
+    </style>
+    <button type="button" class="btn btn-{{type}}"><content></content></button>
+  </template>
+  <script>
+    Polymer('bootstrap-button', {
+      //applyAuthorStyles: true,
+      //resetStyleInheritance: true,
+      type: "default",
+      created: function() { 
+      },
+      enteredView: function() { },
+      leftView: function() { },
+      attributeChanged: function(attrName, oldVal, newVal) { }
+    });
+  </script>
+</polymer-element>

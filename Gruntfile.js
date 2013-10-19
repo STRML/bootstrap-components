@@ -15,6 +15,11 @@ module.exports = function(grunt) {
         }
       }
     },
+    inlinelint: {
+      html: [
+        'elements/**/*.html'
+      ]
+    }
   });
 
   matchdep.filterAll('grunt-*').forEach(function(pkgName){

@@ -1,15 +1,85 @@
 <html>
   <head>
     <script src="../../bower_components/polymer/polymer.min.js"></script>
+
+    <link href="../../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    
     <!-- Place your HTML imports here -->
     <link rel="import" href="header.html">
     <link rel="import" href="footer.html">
+    <link rel="import" href="../navbar.html">
+    <link rel="import" href="../button.html">
+    <link rel="import" href="../dropdown.html">
+
   </head>
   <body>
+    <bootstrap-navbar collapse="true">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </bootstrap-navbar>
     <header-element foo="bar">
       <h1>Some content</h1>
       <h3>H3 element</h3>
       <div class="foobar">Foobar</div>
     </header-element>
+    <bootstrap-button>Button 1</bootstrap-button>
+    <bootstrap-button type="default">Button Default</bootstrap-button>
+    <bootstrap-button type="info">Button Info</bootstrap-button>
+    <bootstrap-button type="warning">Button Warning</bootstrap-button>
+    <bootstrap-button type="danger">Button Error</bootstrap-button>
+
+    <bootstrap-button type="danger" style="display: inline-block">
+      Dropdown Button
+      <bootstrap-dropdown>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </bootstrap-dropdown>
+    </bootstrap-button>
+    <bootstrap-button type="warning" style="display: inline-block">
+      Dropdown Button2
+      <bootstrap-dropdown>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </bootstrap-dropdown>
+    </bootstrap-button>
   </body>
 </html>
