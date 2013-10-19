@@ -1,0 +1,16 @@
+{
+  "name": "bootstrap-components",
+  "version": "0.0.1",
+  "authors": [
+    "Samuel Reed <sam@tixelated.com>"
+  ],
+  "description": "Web Components for Bootstrap Applications",
+  "main": "index.js",
+  "keywords": [
+    "Bootstrap",
+    "Web",
+    "Components"
+  ],
+  "license": "MIT",
+  "private": true
+}

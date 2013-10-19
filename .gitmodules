@@ -1,0 +1,6 @@
+[submodule "polymer"]
+	path = polymer
+	url = git@github.com:Polymer/polymer.git
+[submodule "bootstrap"]
+	path = bootstrap
+	url = git@github.com:twbs/bootstrap.git
