@@ -1,4 +1,4 @@
-<polymer-element name="header-element" attributes="">
+<polymer-element name="header-element" attributes="foo">
   <template>
     <style>
       @host { :scope {display: block;} }
@@ -29,7 +29,7 @@
         text-decoration: none;
       }
     </style>
-    <div class="intro-line"></div>
+    <div class="intro-line {{foo}}"></div>
     <h1>
       Welcome to <a href="/">Securesha.re</a>
     </h1>
@@ -42,7 +42,9 @@
     Polymer('header-element', {
       //applyAuthorStyles: true,
       //resetStyleInheritance: true,
-      created: function() { },
+      created: function() { 
+        console.log(this.foo);
+      },
       enteredView: function() { },
       leftView: function() { },
       attributeChanged: function(attrName, oldVal, newVal) { }
