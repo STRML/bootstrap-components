@@ -40,7 +40,7 @@
         if (this.classList.contains('disabled')) return;
         this.clearMenus(e);
         this.classList.toggle('open');
-        var eventName = "dropdown:" + (this.classList.contains('open') ? 'open' : 'closed');
+        var eventName = "dropdown-" + (this.classList.contains('open') ? 'open' : 'closed');
         this.fire(eventName);
         e.data = {ignoreElement: this};
       },
