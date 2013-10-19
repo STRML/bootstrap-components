@@ -20,4 +20,6 @@ module.exports = function(grunt) {
   matchdep.filterAll('grunt-*').forEach(function(pkgName){
     grunt.loadNpmTasks(pkgName);
   });
+
+  grunt.registerTask('default', ['connect:server:keepalive']);
 };
